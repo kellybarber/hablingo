@@ -1,16 +1,26 @@
-const merge = require('webpack-merge')
+const merge                   = require('webpack-merge')
+const base                    = require('./webpack.base')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const base = require('./webpack.base')
+const MiniCssExtractPlugin    = require('mini-css-extract-plugin')
 
 module.exports = merge(base, {
   mode: 'production',
   devtool: 'source-map',
   module: {
     rules: [
-      { 
-        use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ], 
-        test: /\.scss$/ 
+      {
+        use: [
+          { loader: MiniCssExtractPlugin.loader },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              modules: true,
+              localIdentName: "[local]___[hash:base64:5]"
+            }
+          }
+        ],
+        test: /\.css$/
       }
     ]
   },
