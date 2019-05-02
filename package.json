@@ -7,8 +7,7 @@
     "dev": "webpack-dev-server --config config/webpack.dev.js --hot",
     "build": "webpack --config config/webpack.prod.js",
     "start": "node server/index.js",
-    "start:dev": "nodemon server/index.js",
-    "heroku-postbuild": "npm run build"
+    "start:dev": "nodemon server/index.js"
   },
   "author": "Kelly Barber",
   "license": "MIT",

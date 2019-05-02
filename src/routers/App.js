@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Switch } from 'react-router-dom'
 import { Route } from 'react-router-dom'
-import Home from '../sections/Home/Home'
+import Home from 'Sections/Home/Home'
 
 export default () => (
   <BrowserRouter>

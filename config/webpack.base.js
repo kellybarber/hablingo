@@ -19,7 +19,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/assets/index.html',
+      template: './src/index.html',
       filename: './index.html',
       inject: false
     }),
@@ -28,5 +28,14 @@ module.exports = {
       { root: path.resolve(__dirname, '..') }
     )
   ],
-  resolve: { extensions: [ '*', '.js', '.css', '.scss' ] },
+  resolve: {
+    alias : {
+      Sections   : path.resolve(__dirname, '../src/sections'),
+      Components : path.resolve(__dirname, '../src/components'),
+      Reducers   : path.resolve(__dirname, '../src/reducers'),
+      Context    : path.resolve(__dirname, '../src/context'),
+      Hooks      : path.resolve(__dirname, '../src/hooks'),
+    },
+    extensions: [ '*', '.js', '.css', '.scss' ]
+  }
 }
