@@ -9,7 +9,7 @@ module.exports = merge(base, {
     rules: [
       {
         use: [
-          { loader: 'style-loader' },
+          'style-loader',
           {
             loader: 'css-loader',
             options: {
@@ -17,9 +17,10 @@ module.exports = merge(base, {
               modules: true,
               localIdentName: "[local]___[hash:base64:5]"
             }
-          }
+          },
+          'sass-loader'
         ],
-        test: /\.css$/
+        test: /\.(s*)css$/
       }
     ]
   },

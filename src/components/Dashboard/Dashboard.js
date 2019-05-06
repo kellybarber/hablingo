@@ -2,6 +2,6 @@ import React from 'react'
 
 export default () => (
   <div>
-    Home
+    This is a protected route
   </div>
 )
