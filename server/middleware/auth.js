@@ -10,8 +10,6 @@ exports.verifyUser = async (req, res, next) => {
     let user = await db.User.findOne({ _id: userId })
     if(!user) throw 'You are not verified to view this content'
 
-    console.log('user: ', user)
-
     req.user = user
     next()
 

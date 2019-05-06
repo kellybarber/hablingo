@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { BrowserRouter, Switch } from 'react-router-dom'
 import { PrivateRoute, PublicRoute } from '../helpers/routing'
 import Header from '../components/Header/Header'
@@ -8,13 +8,13 @@ import Dashboard from '../components/Dashboard/Dashboard'
 
 export default () => (
   <BrowserRouter>
-    <div className='app-container'>
+    <Fragment>
       <Header/>
       <Switch>
         <PublicRoute path='/login' component={Login}/>
         <PublicRoute path='/register' component={Register}/>
         <PrivateRoute path='/dashboard' component={Dashboard}/>
       </Switch>
-    </div>
+    </Fragment>
   </BrowserRouter>
 )
