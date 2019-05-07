@@ -14,7 +14,7 @@ exports.verifyUser = async (req, res, next) => {
     next()
 
   } catch (error) {
-    console.log('Verification error: ', error);
+    console.error('Verification error: ', error);
     res.status(401).send({ message: 'Admin verification failed!' });
   }
 }
