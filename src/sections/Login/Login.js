@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { startLoginUser } from '../../actions'
+import { startLoginUser } from 'Actions'
 
 const Login = ({ startLoginUser, errorMessage }) => {
 

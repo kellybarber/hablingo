@@ -3,31 +3,31 @@ const base  = require('./webpack.base')
 const path  = require('path')
 
 module.exports = merge(base, {
-  mode: 'development',
-  devtool: 'eval-source-map',
-  module: {
-    rules: [
+  mode    : 'development',
+  devtool : 'eval-source-map',
+  module  : {
+    rules : [
       {
-        use: [
+        use : [
           'style-loader',
           {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              modules: true,
-              localIdentName: "[local]___[hash:base64:5]"
+            loader  : 'css-loader',
+            options : {
+              sourceMap      : true,
+              modules        : true,
+              localIdentName : "[local]___[hash:base64:5]"
             }
           },
           'sass-loader'
         ],
-        test: /\.(s*)css$/
+        test : /\.s*css/
       }
     ]
   },
-  devServer: {
-    contentBase: path.join(__dirname, '../dist'),
-    historyApiFallback: true,
-    port: 3000,
-    proxy: { '/api': 'http://localhost:8080' }
+  devServer : {
+    contentBase        : path.join(__dirname, '../dist'),
+    historyApiFallback : true,
+    port               : 3000,
+    proxy              : { '/api' : 'http://localhost:8080' }
   }
 })

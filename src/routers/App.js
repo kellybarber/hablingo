@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react'
-import { BrowserRouter, Switch } from 'react-router-dom'
+import React, { Fragment }           from 'react'
+import { BrowserRouter, Switch }     from 'react-router-dom'
 import { PrivateRoute, PublicRoute } from '../helpers/routing'
-import Header from '../components/Header/Header'
-import Login from '../components/Login/Login'
-import Register from '../components/Register/Register'
-import Dashboard from '../components/Dashboard/Dashboard'
+
+import Header    from 'Components/Header/Header'
+import Login     from 'Sections/Login/Login'
+import Register  from 'Sections/Register/Register'
+import Dashboard from 'Sections/Dashboard/Dashboard'
 
 export default () => (
   <BrowserRouter>

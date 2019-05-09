@@ -3,39 +3,40 @@ const HtmlWebpackPlugin  = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
-  entry: ['babel-polyfill', './src/index.js'],
-  output: {
-    path: path.join(__dirname, '../dist'),
-    filename: 'bundle.js'
+  entry  : ['babel-polyfill', './src/index.js'],
+  output : {
+    path     : path.join(__dirname, '../dist'),
+    filename : 'bundle.js'
   },
-  module: {
-    rules: [
+  module : {
+    rules : [
       { 
-        use: [ 'babel-loader' ], 
-        test: /\.js$/, 
-        exclude: /node_modules/ 
+        use     : [ 'babel-loader' ], 
+        test    : /\.js/, 
+        exclude : /node_modules/ 
       }
     ]
   },
-  plugins: [
+  plugins : [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: './index.html',
-      inject: false
+      template : './src/index.html',
+      filename : './index.html',
+      inject   : false
     }),
     new CleanWebpackPlugin(
       ['dist'], 
-      { root: path.resolve(__dirname, '..') }
+      { root : path.resolve(__dirname, '..') }
     )
   ],
-  resolve: {
+  resolve : {
     alias : {
       Sections   : path.resolve(__dirname, '../src/sections'),
       Components : path.resolve(__dirname, '../src/components'),
+      Actions    : path.resolve(__dirname, '../src/actions'),
       Reducers   : path.resolve(__dirname, '../src/reducers'),
       Context    : path.resolve(__dirname, '../src/context'),
       Hooks      : path.resolve(__dirname, '../src/hooks'),
     },
-    extensions: [ '*', '.js', '.css', '.scss' ]
+    extensions : [ '*', '.js', '.css', '.scss' ]
   }
 }

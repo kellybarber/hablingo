@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { startRegisterUser } from '../../actions'
+import { startRegisterUser } from 'Actions'
 
 const Register = ({ startRegisterUser, errorMessage }) => {
 

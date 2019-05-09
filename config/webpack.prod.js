@@ -4,31 +4,31 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const MiniCssExtractPlugin    = require('mini-css-extract-plugin')
 
 module.exports = merge(base, {
-  mode: 'production',
-  devtool: 'source-map',
-  module: {
-    rules: [
+  mode    : 'production',
+  devtool : 'source-map',
+  module  : {
+    rules : [
       {
-        use: [
+        use : [
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              modules: true,
-              localIdentName: "[local]___[hash:base64:5]"
+            loader  : 'css-loader',
+            options : {
+              sourceMap      : true,
+              modules        : true,
+              localIdentName : "[local]___[hash:base64:5]"
             }
           },
           'sass-loader'
         ],
-        test: /\.(s*)css$/
+        test : /\.s*css/
       }
     ]
   },
   plugins: [ 
     new OptimizeCssAssetsPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'style.css'
-    }),
+      filename : 'style.css'
+    })
   ]
 })

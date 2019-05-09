@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
-import { logoutUser } from '../../actions'
+import { logoutUser } from 'Actions'
 
 const Header = ({ logoutUser, history, authenticated }) => {
 
