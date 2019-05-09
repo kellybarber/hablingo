@@ -31,7 +31,7 @@ const VerbSchema = new mongoose.Schema({
       pretéritoAnterior   : tense,
       condicionalPerfecto : tense
     },
-    subjunctivo : {
+    subjuntivo : {
       presente            : tense,
       futuro              : tense,
       imperfecto          : tense,
