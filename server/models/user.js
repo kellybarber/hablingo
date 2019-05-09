@@ -7,8 +7,10 @@ const UserSchema = new mongoose.Schema ({
     type   : String, 
     unique : true 
   },
-  password : { 
-    type : String 
+  password  : String,
+  createdOn : {
+    type    : Date,
+    default : Date.now
   }
 })
 
@@ -22,7 +24,7 @@ UserSchema.pre('save', async function(next) {
     next()
 
   } catch (error) {
-    console.log('Password Hash Error', error)
+    console.error('Password Hash Error', error)
     next()
   }
 })

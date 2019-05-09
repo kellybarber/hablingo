@@ -23,7 +23,7 @@ exports.login = async (req, res) => {
 
   } catch (error) {
     res.status(422).send({ error })
-    console.log('Login Error: ', error)
+    console.error('Login Error: ', error)
   }
 }
 
@@ -41,6 +41,6 @@ exports.register = async (req, res) => {
   } catch (error) {
     if (error.code === 11000) error = 'This user already exists' 
     res.status(422).send({ error })
-    console.log('Registration Error: ', error)
+    console.error('Registration Error: ', error)
   }
 }
