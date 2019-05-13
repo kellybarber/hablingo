@@ -1,4 +1,4 @@
-import { AUTH_USER, AUTH_ERROR } from '../actions/types'
+import { AUTH_USER, AUTH_ERROR } from 'Actions/types'
 
 export default (state={}, { type, payload }) => {
   switch(type) {
