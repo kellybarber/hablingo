@@ -1,7 +1,12 @@
 import React from 'react'
+import { dashboard } from './Dashboard.scss'
 
-export default () => (
-  <div>
-    This is a protected route
-  </div>
-)
+export default () => {
+
+
+  return (
+    <section className={dashboard}>
+
+    </section>
+  )
+}

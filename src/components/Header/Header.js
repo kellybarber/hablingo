@@ -2,30 +2,34 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
 import { logoutUser } from 'Actions'
+import { header } from './Header.scss'
 
 const Header = ({ logoutUser, history, authenticated }) => {
 
-  const logoutButton = () => (
-    <button onClick={() => { 
-      logoutUser() 
-      history.push('/login') 
-    }}>
+  const HeaderWrapper = props => (
+    <header className={header}>
+      { props.children }
+    </header>
+  )
+
+  const LogoutButton = () => (
+    <button onClick={() => { logoutUser(); history.push('/login'); }}>
       Logout
     </button>
   )
 
   const authenticatedHeader = () => (
-    <div>
+    <HeaderWrapper>
       <Link to='/dashboard'>Dashboard</Link>
-      {logoutButton()}
-    </div>
+      <LogoutButton/>
+    </HeaderWrapper>
   )
 
   const notAuthenticatedHeader = () => (
-    <div>
+    <HeaderWrapper>
       <Link to='/register'>Sign Up</Link>
       <Link to='/login'>Sign In</Link>
-    </div>
+    </HeaderWrapper>
   )
 
   return authenticated ? authenticatedHeader() : notAuthenticatedHeader()

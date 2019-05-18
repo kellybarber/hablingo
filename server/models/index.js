@@ -15,3 +15,4 @@ process.on('SIGINT', async () => {
 
 module.exports.User = require('./user')
 module.exports.Verb = require('./verb')
+module.exports.Verb = require('./deck')

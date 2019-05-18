@@ -1,6 +1,6 @@
 import React, { Fragment }           from 'react'
 import { BrowserRouter, Switch }     from 'react-router-dom'
-import { PrivateRoute, PublicRoute } from '../helpers/routing'
+import { PrivateRoute, PublicRoute } from './routing'
 
 import Header    from 'Components/Header/Header'
 import Login     from 'Sections/Login/Login'

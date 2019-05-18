@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const DeckSchema = new mongoose.Schema({
   title : String,
   verbs : [{
-    type : Schema.Types.ObjectId, 
+    type : mongoose.Schema.Types.ObjectId, 
     ref  : 'Verb'
   }]  
 })

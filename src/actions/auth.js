@@ -4,22 +4,22 @@ const setUser = token => localStorage.setItem('token', token)
 const removeUser = () => localStorage.removeItem('token')
 
 const authUser = payload => ({
-  type: AUTH_USER,
+  type : AUTH_USER,
   payload
 })
 
 const authError = payload => ({
-  type: AUTH_ERROR,
+  type : AUTH_ERROR,
   payload
 })
 
 const authRequest = async (url, userData) => {
   const response = await fetch(url, {
-    method: 'post',
-    headers: {
+    method  : 'post',
+    headers : {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
+    body : JSON.stringify({
       userData
     })
   })
