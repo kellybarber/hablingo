@@ -2,9 +2,10 @@ import React           from 'react'
 import ReactDOM        from 'react-dom'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider }    from 'react-redux'
-import rootReducer     from './reducers'
-import setUserToken    from './helpers/setUserToken'
-import setupMiddleware from './helpers/setupMiddleware'
+import rootReducer     from 'Reducers'
+import setUserToken    from 'Helpers/setUserToken'
+import setupMiddleware from 'Helpers/setupMiddleware'
+import { startSetVerbs } from 'Actions/verbs'
 import App             from './routers/App'
 import './styles/main'
 
@@ -22,7 +23,7 @@ import './styles/main'
       </Provider>
     )
 
-    
+    store.dispatch(startSetVerbs())
 
     ReactDOM.render(app, document.getElementById('app'))
 

@@ -3,11 +3,11 @@ const jwt = require('jsonwebtoken')
 
 exports.verifyUser = async (req, res, next) => {
   try {
-    const token = req.headers.authorization.split(' ')[1];
+    const token = req.headers.authorization.split(' ')[0];
 
-    const { userId } = jwt.verify(token, process.env.SECRET_KEY);
+    const { sub : userId } = jwt.verify(token, process.env.SECRET_KEY);
 
-    let user = await db.User.findOne({ _id: userId })
+    let user = await db.User.findOne({ _id : userId })
     if(!user) throw 'You are not verified to view this content'
 
     req.user = user

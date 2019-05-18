@@ -9,9 +9,9 @@ const setVerbs = payload => ({
 export const startSetVerbs = () => (
   async (dispatch, getState) => {
     try {
-      const data = get('/api/verbs', getState().auth.authenticated)
+      const { verbs } = await get('/api/verbs', { authorization: getState().auth.authenticated })
 
-      console.log(data)
+      dispatch(setVerbs(verbs))
 
     } catch (error) {
       console.error('Start Get Verbs Error: ', error)
