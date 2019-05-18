@@ -1,0 +1,13 @@
+.button {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+
+  height: 80px;
+  width: 80px;
+
+  border: none;
+  border-radius: 50%;
+  background-color: var(--green);
+  outline: none;
+}

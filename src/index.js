@@ -23,7 +23,7 @@ import './styles/main'
       </Provider>
     )
 
-    store.dispatch(startSetVerbs())
+    await store.dispatch(startSetVerbs())
 
     ReactDOM.render(app, document.getElementById('app'))
 
