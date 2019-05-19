@@ -1,9 +1,14 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
 section {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-height));
   padding: 30px;
 }

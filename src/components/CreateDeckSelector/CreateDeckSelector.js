@@ -1,12 +1,12 @@
 import React from 'react'
-import { wrapper } from './CreateDeckSelector.scss'
+import { createDeckSelector } from './CreateDeckSelector.scss'
 
 import CreateDeckSearch   from '../CreateDeckSearch/CreateDeckSearch'
 import CreateDeckVerbList from '../CreateDeckVerbList/CreateDeckVerbList'
 
 const CreateDeckSelector = () => {
   return (
-    <div className={wrapper}>
+    <div className={createDeckSelector}>
       <CreateDeckSearch/>
       <CreateDeckVerbList/>
     </div>

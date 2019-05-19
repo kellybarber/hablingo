@@ -1,14 +1,15 @@
 import React, { useContext } from 'react'
-import {} from './CreateDeckVerbList.scss'
+import { createDeckVerbList } from './CreateDeckVerbList.scss'
 
 import CreateDeckContext from 'Context/createDeck'
+import CreateDeckVerb    from '../CreateDeckVerb/CreateDeckVerb'
 
 const CreateDeckVerbList = () => {
   const { verbs, dispatch } = useContext(CreateDeckContext)
 
   return (
-    <div>
-      
+    <div className={createDeckVerbList}>
+      {verbs.map((verb, index) => <CreateDeckVerb verb={verb} key={index}/> )}
     </div>
   )
 }

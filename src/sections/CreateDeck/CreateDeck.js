@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react'
 import { connect } from 'react-redux'
-import { section } from './CreateDeck.scss'
+import { createDeck } from './CreateDeck.scss'
 
 import CreateDeckContext from 'Context/createDeck'
 import createDeckReducer from 'Reducers/createDeck'
@@ -13,7 +13,7 @@ const CreateDeck = ({ verbs }) => {
 
   return (
     <CreateDeckContext.Provider value={{ deck, dispatch, verbs }}>
-      <section className={section}>
+      <section className={createDeck}>
         <CreateDeckSelector/>
         <CreateDeckInfo/>
       </section>
