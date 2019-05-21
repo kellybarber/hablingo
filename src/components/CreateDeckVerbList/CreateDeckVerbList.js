@@ -5,7 +5,7 @@ import CreateDeckContext from 'Context/createDeck'
 import CreateDeckVerb    from '../CreateDeckVerb/CreateDeckVerb'
 
 const CreateDeckVerbList = () => {
-  const { verbs, dispatch } = useContext(CreateDeckContext)
+  const { verbs } = useContext(CreateDeckContext)
 
   return (
     <div className={createDeckVerbList}>
