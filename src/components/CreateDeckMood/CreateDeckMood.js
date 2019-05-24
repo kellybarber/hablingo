@@ -10,7 +10,7 @@ const CreateDeckMood = ({ mood, tenses, children, styles : { svg, arrow, button 
         {mood}
         <svg className={svg}><polygon className={arrow} points="8,5 0,10 0,0"/></svg>  
       </button>
-      { moodSelected && tenses.map(tense => children(tense, mood)) }
+      { moodSelected && tenses.map(tense => children(tense, mood))}
     </Fragment>
   )
 }
