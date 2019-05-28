@@ -1,8 +1,14 @@
 import React, { useState } from 'react'
+import { tenseButton }    from './CreateDeckTense.scss'
 
-const CreateDeckTense = ({ tense, mood, handleAddVerb, styles : { button }}) => {
+const CreateDeckTense = ({ tense, mood, addVerb, styles : { button }}) => {
+  
+
   return (
-    <button className={button} onClick={() => handleAddVerb(mood, tense)}>
+    <button 
+      className={`${button} ${tenseButton}`} 
+      onClick={() => addVerb(mood, tense)}
+    >
       {tense}
     </button>
   )

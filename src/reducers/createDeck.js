@@ -5,10 +5,10 @@ export default (state, { type, payload }) => {
     case ADD_VERB:
       return [ ...state, payload ]
     case REMOVE_VERB:
-      return state.filter(entry => (
-        entry.infinitive !== payload.infinitive &&
-        entry.mood       !== payload.mood &&
-        entry.tense      !== payload.tense
+      return state.filter(entry => !(
+          entry.infinitive === payload.infinitive &&
+          entry.mood       === payload.mood &&
+          entry.tense      === payload.tense
       ))
     default:
       return state

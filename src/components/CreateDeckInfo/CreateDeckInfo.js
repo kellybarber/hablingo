@@ -1,10 +1,18 @@
-import React from 'react'
-import { wrapper } from './CreateDeckInfo.scss'
+import React, { useContext } from 'react'
+import { createDeckInfo } from './CreateDeckInfo.scss'
+
+import CreateDeckContext from 'Context/createDeck'
+import CreateDeckInfoEntry from '../CreateDeckInfoEntry/CreateDeckInfoEntry'
 
 const CreateDeckInfo = () => {
-  return (
-    <div className={wrapper}>
+  const { deck } = useContext(CreateDeckContext)
 
+  return (
+    <div className={createDeckInfo}>
+      <input />
+      <div>
+        { deck.map((entry, index) => <CreateDeckInfoEntry {...entry} key={index} />)}
+      </div>
     </div>
   )
 }

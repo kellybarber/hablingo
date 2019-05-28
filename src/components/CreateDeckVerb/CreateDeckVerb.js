@@ -1,9 +1,7 @@
-import React, { useState, useContext } from 'react'
+import React, { Fragment, useCallback, useState, useContext } from 'react'
 import { ADD_VERB, REMOVE_VERB } from 'Actions/types'
 import moods from 'Helpers/moods'
-import 
-  styles, { createDeckVerb, button, buttonGreen, svg, arrow, shelf } 
-from './CreateDeckVerb.scss'
+import styles, { button, svg, svgOpen, arrow, moodShelf } from './CreateDeckVerb.scss'
 
 import CreateDeckContext from 'Context/createDeck'
 import CreateDeckMood  from '../CreateDeckMood/CreateDeckMood'
@@ -13,45 +11,47 @@ const CreateDeckVerb = ({ verb }) => {
   const { deck, dispatch } = useContext(CreateDeckContext)
   const [ verbSelected, setVerbSelected ] = useState(false)
 
-  const isInDeck = deck.some(({ infinitive }) => infinitive === verb)
+  const addVerb = (mood, tense) => {
+    // const verbExists = deck.some(entry => (
+    //   entry.infinitive === verb &&
+    //   entry.mood       === mood &&
+    //   entry.tense      === tense
+    // ))
 
-  const handleAddVerb = (mood, tense) => {
-    const exists = deck.some(entry => (
-      entry.infinitive === verb &&
-      entry.mood       === mood &&
-      entry.tense      === tense
-    ))
+    // if (!verbExists) {
+      dispatch({ 
+        type    : ADD_VERB, 
+        payload : { infinitive : verb, mood, tense } 
+      })
+    // }
 
-    if (!exists) dispatch({ 
-      type    : ADD_VERB, 
-      payload : { infinitive : verb, mood, tense } 
-    })
-
-    if (exists) dispatch({ 
-      type    : REMOVE_VERB, 
-      payload : { infinitive : verb, mood, tense } 
-    })
+    // if (verbExists) dispatch({ 
+    //   type    : REMOVE_VERB, 
+    //   payload : { infinitive : verb, mood, tense } 
+    // })
   }
 
   return (
-    <div className={createDeckVerb}>
+    <Fragment>
       <button 
-        className={`${button} ${isInDeck && buttonGreen}`} 
+        className={`${button}`} 
         onClick={() => setVerbSelected(!verbSelected)}
       >
         {verb}
-        <svg className={svg}><polygon className={arrow} points="8,5 0,10 0,0"/></svg>
+        <svg className={`${svg} ${verbSelected && svgOpen}`}>
+          <polygon className={arrow} points="8,5 0,10 0,0"/>
+        </svg>
       </button>
-      <div className={shelf}>
+      <div className={moodShelf}>
         {verbSelected && moods.map(({ mood, tenses }) => (
-          <CreateDeckMood { ...{ mood, tenses, isInDeck, styles }} key={verb+mood}>
+          <CreateDeckMood { ...{ mood, tenses, styles }} key={verb+mood}>
             {(tense, mood) => (
-              <CreateDeckTense { ...{ tense, mood, handleAddVerb, styles }} key={verb+mood+tense}/>
+              <CreateDeckTense { ...{ tense, mood, addVerb, styles }} key={verb+mood+tense}/>
             )}
           </CreateDeckMood>          
         ))}
       </div>
-    </div>
+    </Fragment>
   )
 }
 

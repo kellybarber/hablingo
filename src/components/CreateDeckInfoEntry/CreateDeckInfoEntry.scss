@@ -1,0 +1,22 @@
+.createDeckInfoEntry {
+  border: none;
+  background-color: var(--green);
+  color: white;
+}
+
+.verb {  
+  &Infinitive {
+    color: white;
+    background-color: var(--green);
+  }
+
+  &Mood {
+    color: white;
+    background-color: #06BACC;
+  }
+
+  &Tense {
+    color: white;
+    background-color: #06D6B0;
+  }
+}
