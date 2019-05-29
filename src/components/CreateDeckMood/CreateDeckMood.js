@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import { moodButton, tenseShelfOpen, tenseShelfClosed } from './CreateDeckMood.scss'
+import { moodButton } from './CreateDeckMood.scss'
 
 const CreateDeckMood = ({ mood, tenses, children, styles : { svg, svgOpen, arrow, button } }) => {
 
@@ -9,6 +9,7 @@ const CreateDeckMood = ({ mood, tenses, children, styles : { svg, svgOpen, arrow
     <Fragment>
       <button
         className={`${button} ${moodButton}`} 
+        type='button'
         onClick={() => setMoodSelected(!moodSelected)}
       >
         {mood}

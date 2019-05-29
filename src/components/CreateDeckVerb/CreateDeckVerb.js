@@ -11,30 +11,17 @@ const CreateDeckVerb = ({ verb }) => {
   const { deck, dispatch } = useContext(CreateDeckContext)
   const [ verbSelected, setVerbSelected ] = useState(false)
 
-  const addVerb = (mood, tense) => {
-    // const verbExists = deck.some(entry => (
-    //   entry.infinitive === verb &&
-    //   entry.mood       === mood &&
-    //   entry.tense      === tense
-    // ))
-
-    // if (!verbExists) {
-      dispatch({ 
-        type    : ADD_VERB, 
-        payload : { infinitive : verb, mood, tense } 
-      })
-    // }
-
-    // if (verbExists) dispatch({ 
-    //   type    : REMOVE_VERB, 
-    //   payload : { infinitive : verb, mood, tense } 
-    // })
-  }
+  const addVerb = (mood, tense) => dispatch({ 
+    type    : ADD_VERB, 
+    payload : { infinitive : verb, mood, tense } 
+  })
+  
 
   return (
     <Fragment>
       <button 
-        className={`${button}`} 
+        className={button} 
+        type='button'
         onClick={() => setVerbSelected(!verbSelected)}
       >
         {verb}

@@ -1,11 +1,9 @@
 import React from 'react'
-import {} from './CreateDeckSearch.scss'
+import { createDeckSearch } from './CreateDeckSearch.scss'
 
 const CreateDeckSearch = () => {
   return (
-    <div>
-
-    </div>
+    <input className={createDeckSearch} />
   )
 }
 

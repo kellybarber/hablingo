@@ -4,7 +4,7 @@ import { section } from './Dashboard.scss'
 
 import CreateDeckButton from 'Components/CreateDeckButton/CreateDeckButton'
 
-const Dashboard = ({ verbs }) => {
+const Dashboard = () => {
   return (
     <section className={section}>
       <CreateDeckButton/>
@@ -12,6 +12,4 @@ const Dashboard = ({ verbs }) => {
   )
 }
 
-const mapStateToProps = ({ verbs }) => ({ verbs })
-
-export default connect(mapStateToProps)(Dashboard)
+export default connect({})(Dashboard)

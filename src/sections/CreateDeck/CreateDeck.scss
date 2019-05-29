@@ -1,6 +1,10 @@
 .createDeck {
+  position: relative;
+  background-color: #D9B68B;
+}
+
+.form {
   display: flex;
   flex-direction: column;
-
-  background-color: #D9B68B;
+  height: 100%;
 }

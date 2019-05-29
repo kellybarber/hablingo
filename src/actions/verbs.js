@@ -1,4 +1,4 @@
-import { get } from '../helpers/ajax'
+import { get } from 'Helpers/ajax'
 import { SET_VERBS } from './types'
 
 const setVerbs = payload => ({

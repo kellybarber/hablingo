@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { createDeckInfo } from './CreateDeckInfo.scss'
+import { createDeckInfo, titleInput } from './CreateDeckInfo.scss'
 
 import CreateDeckContext from 'Context/createDeck'
 import CreateDeckInfoEntry from '../CreateDeckInfoEntry/CreateDeckInfoEntry'
@@ -9,7 +9,7 @@ const CreateDeckInfo = () => {
 
   return (
     <div className={createDeckInfo}>
-      <input />
+      <input className={titleInput} />
       <div>
         { deck.map((entry, index) => <CreateDeckInfoEntry {...entry} key={index} />)}
       </div>
