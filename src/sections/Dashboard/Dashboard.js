@@ -12,4 +12,4 @@ const Dashboard = () => {
   )
 }
 
-export default connect({})(Dashboard)
+export default connect()(Dashboard)

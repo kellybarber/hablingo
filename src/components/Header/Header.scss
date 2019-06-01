@@ -1,5 +1,6 @@
 .header {
   height: var(--header-height);
   width: 100vw;
+  box-shadow: var(--outside-shadow);
   background-color: var(--white);
 }

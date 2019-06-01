@@ -1,5 +1,5 @@
-import React, { Fragment, useCallback, useState, useContext } from 'react'
-import { ADD_VERB, REMOVE_VERB } from 'Actions/types'
+import React, { Fragment, useState, useContext } from 'react'
+import { ADD_VERB } from 'Actions/types'
 import moods from 'Helpers/moods'
 import styles, { button, svg, svgOpen, arrow, moodShelf } from './CreateDeckVerb.scss'
 
@@ -8,7 +8,7 @@ import CreateDeckMood  from '../CreateDeckMood/CreateDeckMood'
 import CreateDeckTense from '../CreateDeckTense/CreateDeckTense'
 
 const CreateDeckVerb = ({ verb }) => {
-  const { deck, dispatch } = useContext(CreateDeckContext)
+  const { dispatch } = useContext(CreateDeckContext)
   const [ verbSelected, setVerbSelected ] = useState(false)
 
   const addVerb = (mood, tense) => dispatch({ 
@@ -16,7 +16,6 @@ const CreateDeckVerb = ({ verb }) => {
     payload : { infinitive : verb, mood, tense } 
   })
   
-
   return (
     <Fragment>
       <button 

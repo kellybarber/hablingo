@@ -4,5 +4,11 @@
   margin-bottom: 20px;
   padding: 15px;
 
+  box-shadow: var(--outside-shadow);
   background-color: var(--white);
+}
+
+.verbListContainer {
+  min-height: 80px;
+  box-shadow: var(--inside-shadow);
 }

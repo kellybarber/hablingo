@@ -10,7 +10,7 @@ import CreateDeckInfo     from 'Components/CreateDeckInfo/CreateDeckInfo'
 import SubmitButton       from 'Components/SubmitButton/SubmitButton'
 
 const CreateDeck = ({ verbs }) => {
-  const [ deck, dispatch ] = useReducer(createDeckReducer, [])
+  const [ deck, dispatch ] = useReducer(createDeckReducer, { verbs : [] })
 
   const onSubmit = e => {
     e.preventDefault()

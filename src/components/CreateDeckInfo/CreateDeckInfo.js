@@ -1,17 +1,32 @@
-import React, { useContext } from 'react'
-import { createDeckInfo, titleInput } from './CreateDeckInfo.scss'
+import React, { useEffect, useState, useContext } from 'react'
+import { createDeckInfo, verbListContainer } from './CreateDeckInfo.scss'
 
 import CreateDeckContext from 'Context/createDeck'
 import CreateDeckInfoEntry from '../CreateDeckInfoEntry/CreateDeckInfoEntry'
 
 const CreateDeckInfo = () => {
   const { deck } = useContext(CreateDeckContext)
+  const [ verbList, setVerbList ] = useState({})
+
+  useEffect(() => {
+    deck.verbs.forEach(({ infinitive, mood, tense }) => {
+      setVerbList({
+        ...verbList,
+        [mood] : {
+          ...verbList[mood],
+          [tense] : [
+            ...(verbList[mood] && verbList[mood][tense] ? verbList[mood][tense] : []),
+            infinitive
+          ]
+        }
+      })
+    })
+  }, [deck])
 
   return (
     <div className={createDeckInfo}>
-      <input className={titleInput} />
-      <div>
-        { deck.map((entry, index) => <CreateDeckInfoEntry {...entry} key={index} />)}
+      <div className={verbListContainer}>
+        { deck.verbs.map((entry, index) => <CreateDeckInfoEntry {...entry} key={index} />)}
       </div>
     </div>
   )

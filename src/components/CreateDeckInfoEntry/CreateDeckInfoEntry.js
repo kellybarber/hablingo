@@ -1,13 +1,19 @@
 import React, { useContext } from 'react'
-import { createDeckInfoEntry, verbInfinitive, verbMood, verbTense } from './CreateDeckInfoEntry.scss'
+import { REMOVE_VERB } from 'Actions/types'
+import { createDeckInfoEntry } from './CreateDeckInfoEntry.scss'
 
 import CreateDeckContext from 'Context/createDeck'
 
 const CreateDeckInfoEntry = ({ infinitive, mood, tense }) => {
   const { dispatch } = useContext(CreateDeckContext)
+
+  const removeVerb = () => dispatch({
+    type    : REMOVE_VERB,
+    payload : { infinitive, mood, tense } 
+  })
   
   return (
-    <button className={createDeckInfoEntry}>
+    <button className={createDeckInfoEntry} onClick={removeVerb}>
       <span>{infinitive}</span>
       <span>{mood}</span>
       <span>{tense}</span>
