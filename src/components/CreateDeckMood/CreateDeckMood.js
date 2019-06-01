@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react'
 import { moodButton } from './CreateDeckMood.scss'
 
 const CreateDeckMood = ({ mood, tenses, children, styles : { svg, svgOpen, arrow, button } }) => {
-
+  
   const [ moodSelected, setMoodSelected ] = useState(false)
 
   return (

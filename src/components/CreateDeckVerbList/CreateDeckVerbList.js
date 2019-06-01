@@ -5,11 +5,13 @@ import CreateDeckContext from 'Context/createDeck'
 import CreateDeckVerb    from '../CreateDeckVerb/CreateDeckVerb'
 
 const CreateDeckVerbList = () => {
-  const { verbs } = useContext(CreateDeckContext)
+  const { deck, verbs } = useContext(CreateDeckContext)
 
   return (
     <div className={createDeckVerbList}>
-      {verbs.map((verb, index) => <CreateDeckVerb verb={verb} key={index}/> )}
+      {verbs
+        // .filter(verb => verb.includes(deck.search) )
+        .map((verb, index) => <CreateDeckVerb verb={verb} key={index}/> )}
     </div>
   )
 }

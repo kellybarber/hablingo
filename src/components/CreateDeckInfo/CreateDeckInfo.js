@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { createDeckInfo, verbListContainer } from './CreateDeckInfo.scss'
+import { createDeckInfo, verbListContainer, verbListSection, verbListTitle } from './CreateDeckInfo.scss'
 
 import CreateDeckContext from 'Context/createDeck'
 import CreateDeckInfoEntry from '../CreateDeckInfoEntry/CreateDeckInfoEntry'
@@ -33,8 +33,8 @@ const CreateDeckInfo = () => {
       <div className={verbListContainer}>
         { Object.keys(verbList).map(mood => (
           Object.keys(verbList[mood]).map(tense => (
-            <div key={mood+tense}>
-              <h2>{`${mood} / ${tense}`}</h2>
+            <div className={verbListSection} key={mood+tense}>
+              <h2 className={verbListTitle}>{`${mood} / ${tense}`}</h2>
               { verbList[mood][tense].map((infinitive, index) => <CreateDeckInfoEntry {...{infinitive, mood, tense}} key={index} />) }
             </div>
           ))

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { REMOVE_VERB } from 'Actions/types'
-import { createDeckInfoEntry } from './CreateDeckInfoEntry.scss'
+import { createDeckInfoEntry, buttonText, closeIcon } from './CreateDeckInfoEntry.scss'
 
 import CreateDeckContext from 'Context/createDeck'
 
@@ -14,8 +14,8 @@ const CreateDeckInfoEntry = ({ infinitive, mood, tense }) => {
   
   return (
     <button className={createDeckInfoEntry} type='button' onClick={removeVerb}>
-      <span>{infinitive}</span>
-      <span>&times;</span>
+      <span className={buttonText}>{infinitive}</span>
+      <span className={closeIcon}>&times;</span>
     </button>
   )
 }

@@ -9,6 +9,25 @@
 }
 
 .verbListContainer {
-  min-height: 80px;
+  min-height: 100px;
+  max-height: 150px;
+  padding: 10px 15px;
   box-shadow: var(--inside-shadow);
+  overflow: auto;
+}
+
+.verbListSection {
+  margin-bottom: 10px;
+}
+
+.verbListTitle {
+  padding: 4px;
+  margin-bottom: 10px;
+
+  font-size: var(--text-small);
+  font-weight: 200;
+  color: var(--purple);
+  text-align: center;
+
+  border: 1px solid var(--purple);
 }
