@@ -13,10 +13,8 @@ const CreateDeckInfoEntry = ({ infinitive, mood, tense }) => {
   })
   
   return (
-    <button className={createDeckInfoEntry} onClick={removeVerb}>
+    <button className={createDeckInfoEntry} type='button' onClick={removeVerb}>
       <span>{infinitive}</span>
-      <span>{mood}</span>
-      <span>{tense}</span>
       <span>&times;</span>
     </button>
   )

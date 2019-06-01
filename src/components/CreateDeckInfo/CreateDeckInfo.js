@@ -9,24 +9,36 @@ const CreateDeckInfo = () => {
   const [ verbList, setVerbList ] = useState({})
 
   useEffect(() => {
+    let sortedVerbs = {}
+
     deck.verbs.forEach(({ infinitive, mood, tense }) => {
-      setVerbList({
-        ...verbList,
+      sortedVerbs = {
+        ...sortedVerbs,
         [mood] : {
-          ...verbList[mood],
+          ...sortedVerbs[mood],
           [tense] : [
-            ...(verbList[mood] && verbList[mood][tense] ? verbList[mood][tense] : []),
+            ...(sortedVerbs[mood] && sortedVerbs[mood][tense] ? sortedVerbs[mood][tense] : []),
             infinitive
           ]
         }
-      })
+      }
     })
+
+    setVerbList(sortedVerbs)
+
   }, [deck])
 
   return (
     <div className={createDeckInfo}>
       <div className={verbListContainer}>
-        { deck.verbs.map((entry, index) => <CreateDeckInfoEntry {...entry} key={index} />)}
+        { Object.keys(verbList).map(mood => (
+          Object.keys(verbList[mood]).map(tense => (
+            <div key={mood+tense}>
+              <h2>{`${mood} / ${tense}`}</h2>
+              { verbList[mood][tense].map((infinitive, index) => <CreateDeckInfoEntry {...{infinitive, mood, tense}} key={index} />) }
+            </div>
+          ))
+        )) }
       </div>
     </div>
   )
