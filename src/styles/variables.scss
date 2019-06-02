@@ -2,7 +2,9 @@
   --white: #ffffff;
   --green: #04BF68;
   --purple: #9418CA;
+  --blue: #06BACC;
   --off-black: #494F59;
+  --light-grey: rgba(0, 0, 0, 0.25);
 
   --header-height: 50px;
 
@@ -10,6 +12,10 @@
   --text-medium: 22px;
   --text-small: 18px;
 
-  --outside-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
-  --inside-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.25);
+  --margin-small: 20px;
+
+  --padding-small: 15px;
+
+  --outside-shadow: 0px 6px 6px var(--light-grey);
+  --inside-shadow: inset 0px 0px 8px var(--light-grey);
 }

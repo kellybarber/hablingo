@@ -10,7 +10,7 @@ const CreateDeckVerbList = () => {
   return (
     <div className={createDeckVerbList}>
       {verbs
-        // .filter(verb => verb.includes(deck.search) )
+        .filter(verb => deck.search ? verb.includes(deck.search) : verb )
         .map((verb, index) => <CreateDeckVerb verb={verb} key={index}/> )}
     </div>
   )

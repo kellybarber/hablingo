@@ -3,8 +3,8 @@
   flex-direction: column;
 
   flex: 1 1 auto;
-  margin-bottom: 20px;
-  padding: 15px;
+  margin-bottom: var(--margin-small);
+  padding: var(--padding-small);
 
   overflow: hidden;
 

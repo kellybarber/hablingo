@@ -10,6 +10,7 @@ const CreateDeckSearch = () => {
   return (
     <input 
       className={createDeckSearch} 
+      placeholder='Search'
       onChange={e => dispatch({ type : ADD_SEARCH, payload : e.target.value })} 
     />
   )

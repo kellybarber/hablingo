@@ -1,7 +1,5 @@
 .createDeckSearch {
-  flex: 1 1 auto;
-
-  min-height: 34px;
+  height: 34px;
   margin-bottom: 15px;
   padding: 5px 10px;
 
@@ -10,4 +8,8 @@
 
   border-color: var(--off-black);
   border-width: 1px;
+
+  &::placeholder {
+    color: var(--light-grey);
+  }
 }

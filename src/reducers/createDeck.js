@@ -1,7 +1,13 @@
-import { ADD_SEARCH, ADD_VERB, REMOVE_VERB } from 'Actions/types'
+import { ADD_TITLE, ADD_SEARCH, ADD_VERB, REMOVE_VERB } from 'Actions/types'
 
 export default (state, { type, payload }) => {
+  console.log(state);
   switch (type) {
+    case ADD_TITLE: 
+      return {
+        ...state,
+        title : payload
+      }
     case ADD_SEARCH: 
       return {
         ...state,

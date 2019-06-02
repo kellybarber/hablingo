@@ -1,10 +1,15 @@
 .createDeckInfoEntry {
   padding: 4px 8px;
+  margin-bottom: 5px;
 
   font-size: var(--text-small);
   color: var(--off-black);
 
   border: 1px solid var(--off-black);
+
+  &:not(:last-child) {
+    margin-right: 5px;
+  }
 }
 
 .buttonText {
@@ -12,5 +17,4 @@
 }
 
 .closeIcon {
-  // font-size: var(--text-medium);
 }

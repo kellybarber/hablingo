@@ -1,8 +1,8 @@
 .createDeckInfo {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
 
-  margin-bottom: 20px;
-  padding: 15px;
+  margin-bottom: var(--margin-small);
+  padding: var(--padding-small);
 
   box-shadow: var(--outside-shadow);
   background-color: var(--white);
