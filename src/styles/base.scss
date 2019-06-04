@@ -10,5 +10,5 @@ body {
 
 section {
   height: calc(100vh - var(--header-height));
-  padding: 20px;
+  padding: var(--padding-medium);
 }
