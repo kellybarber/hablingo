@@ -1,8 +1,8 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React                from 'react'
+import { connect }          from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
-import { logoutUser } from 'Actions'
-import { header } from './Header.scss'
+import { logoutUser }       from 'Actions'
+import { header }           from './Header.scss'
 
 const Header = ({ logoutUser, history, authenticated }) => {
 
