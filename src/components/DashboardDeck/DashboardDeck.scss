@@ -1,0 +1,29 @@
+.dashboardDeck {
+  position: relative;
+  height: 150px;
+  margin-bottom: var(--margin-small);
+  padding-top: 40px;
+  background-color: var(--white);
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--blue);
+  }
+}
+
+.heading {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+
+  text-align: center;
+  font-family: var(--roboto-mono);
+  font-size: var(--text-medium);
+  color: var(--off-black);
+}

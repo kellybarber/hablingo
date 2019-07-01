@@ -4,11 +4,7 @@ import React, {
 } from 'react'
 import { connect } from 'react-redux'
 
-const Loading = () => (
-  <div>
-    ...Loading
-  </div>
-)
+import Loader from 'Components/Loader/Loader'
 
 const Query = ({ query, dispatch, children }) => {
 
@@ -22,7 +18,7 @@ const Query = ({ query, dispatch, children }) => {
   }, [])
 
   if (loading) 
-    return <Loading />
+    return <Loader />
   else 
     return children
 }

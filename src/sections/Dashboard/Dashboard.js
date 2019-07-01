@@ -1,20 +1,19 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import { section } from './Dashboard.scss'
 
 import { startSetDecks } from 'Actions/decks'
 
-import Query            from 'Components/Query/Query'
-import CreateDeckButton from 'Components/CreateDeckButton/CreateDeckButton'
+import Query             from 'Components/Query/Query'
+import DashboardDeckList from 'Components/DashboardDeckList/DashboardDeckList'
+import CreateDeckButton  from 'Components/CreateDeckButton/CreateDeckButton'
 
-const Dashboard = () => {
+export default function Dashboard() {
   return (
     <Query query={startSetDecks}>
       <section className={section}>
+        <DashboardDeckList/>
         <CreateDeckButton/>
       </section>
     </Query>
   )
 }
-
-export default connect()(Dashboard)
