@@ -6,3 +6,22 @@ export const get = async (url, headers) => {
 
   return data
 }
+
+export const post = async (url, headers, request) => {
+  const response = await fetch(url, {
+    method  : 'post',
+    headers : {
+      'Content-Type': 'application/json',
+      ...headers
+    },
+    body : JSON.stringify({
+      ...request
+    })
+  })
+
+  const data = await response.json()
+
+  if (!response.ok) throw data
+
+  return data
+}

@@ -7,6 +7,7 @@ const port       = process.env.PORT || 8080
 const publicPath = path.join(__dirname, '..', 'dist')
 
 const authRoutes = require('./routes/authRoutes')
+const deckRoutes = require('./routes/deckRoutes')
 const verbRoutes = require('./routes/verbRoutes')
 
 require('dotenv').config()
@@ -15,6 +16,7 @@ app.use(cors())
 app.use(express.static(publicPath))
 
 app.use('/api/auth', authRoutes)
+app.use('/api/decks', deckRoutes)
 app.use('/api/verbs', verbRoutes)
 
 app.get('*', (req, res) => {
