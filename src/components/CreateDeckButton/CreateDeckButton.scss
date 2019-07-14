@@ -1,5 +1,5 @@
 .button {
-  position: absolute;
+  position: fixed;
   right: 20px;
   bottom: 20px;
 
@@ -9,5 +9,6 @@
   border: none;
   border-radius: 50%;
   background-color: var(--green);
+  box-shadow: var(--outside-shadow);  
   outline: none;
 }

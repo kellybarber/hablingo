@@ -10,12 +10,10 @@ const Query = ({ query, dispatch, children }) => {
 
   const [ loading, setLoading ] = useState(true)
 
-  useEffect(() => {
-    (async () => {
-      const status = await dispatch(query())
-      if (!status.error) setLoading(false)
-    })()
-  }, [])
+  useEffect(() => {(async () => {
+    const status = await dispatch(query())
+    if (!status.error) setLoading(false)
+  })()}, [])
 
   if (loading) 
     return <Loader />

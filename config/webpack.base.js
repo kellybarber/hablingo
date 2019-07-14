@@ -36,7 +36,8 @@ module.exports = {
       Reducers   : path.resolve(__dirname, '../src/reducers'),
       Context    : path.resolve(__dirname, '../src/context'),
       Hooks      : path.resolve(__dirname, '../src/hooks'),
-      Helpers    : path.resolve(__dirname, '../src/helpers')
+      Helpers    : path.resolve(__dirname, '../src/helpers'),
+      Assets     : path.resolve(__dirname, '../src/assets')
     },
     extensions : [ '*', '.js', '.css', '.scss' ]
   }
