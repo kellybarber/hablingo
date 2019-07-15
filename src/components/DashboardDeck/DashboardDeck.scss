@@ -1,7 +1,10 @@
 .dashboardDeck {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   height: 150px;
-  
   margin-bottom: var(--margin-small);
   padding-top: 40px;
 
